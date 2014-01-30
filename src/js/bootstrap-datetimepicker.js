@@ -274,8 +274,13 @@
                 oldDate: pMoment(oldDate)
             });
 
-            if (eventType !== 'change')
-                picker.element.change();
+            if (eventType !== 'change') {
+				if (picker.isInput) {
+					picker.element.change();
+				} else {
+					picker.element.find('input').change();
+				}
+			}
         },
 
 		notifyError = function (date) {
