@@ -273,15 +273,9 @@
                 date: pMoment(picker.date),
                 oldDate: pMoment(oldDate)
             });
-<<<<<<< HEAD
-			
-			if (eventType !== 'change')
-				picker.element.change();
-=======
 
             if (eventType !== 'change')
                 picker.element.change();
->>>>>>> upstream/master
         },
 
 		notifyError = function (date) {
@@ -668,24 +662,14 @@
             var input = $(e.target), oldDate = pMoment(picker.date), newDate = pMoment(input.val(), picker.format, picker.options.useStrict);
             if (newDate.isValid() && !isInDisableDates(newDate) && isInEnableDates(newDate)) {
                 update();
-<<<<<<< HEAD
-                picker.setValue(d);
-=======
                 picker.setValue(newDate);
->>>>>>> upstream/master
                 notifyChange(oldDate, e.type);
                 set();
             }
             else {
                 picker.viewDate = oldDate;
-<<<<<<< HEAD
-                //picker.setValue(""); // unset the date when the input is erased
-                notifyChange(oldDate, e.type);
-                notifyError(d);
-=======
                 notifyChange(oldDate, e.type);
                 notifyError(newDate);
->>>>>>> upstream/master
                 picker.unset = true;
             }
         },
